@@ -128,9 +128,13 @@ def need_subjects() -> bool:
     if subjects:
         return False
     ui.empty("school", "Let's build your study plan",
-             "Add a subject with its syllabus and exam date, or load the demo from the sidebar.")
-    c = st.columns([1, 1, 1])[1]
-    if c.button("Load demo subjects", icon=":material/auto_awesome:", type="primary", width="stretch"):
+             "Add your first subject with its syllabus and exam date, or try the demo subjects.")
+    _, c1, c2, _ = st.columns([1, 1.2, 1.2, 1])
+    if c1.button("Add your first subject", icon=":material/add:", type="primary", width="stretch",
+                 key=f"empty_add_{st.session_state.get('_page', '')}"):
+        add_subject_dialog()
+    if c2.button("Load demo subjects", icon=":material/auto_awesome:", width="stretch",
+                 key=f"empty_demo_{st.session_state.get('_page', '')}"):
         load_sample(orch, today)
         st.rerun()
     return True
