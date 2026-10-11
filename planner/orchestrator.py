@@ -14,7 +14,7 @@ from planner.db import Database
 
 COACH_SYSTEM = """You are a supportive, practical study coach inside a study-planner
 app. You get the student's progress data as JSON. Write a short briefing in
-Markdown (under 200 words): what to focus on today and why, any subject at risk
+Markdown (under 200 words, no emojis): what to focus on today and why, any subject at risk
 of running out of time (with a concrete fix such as adding hours on a specific
 weekday or ticking off topics they already know), and one tip for the weakest
 subject. Be specific and use the numbers. No preamble."""
@@ -95,7 +95,7 @@ class Orchestrator:
         else:
             lines.append("**Today:** nothing scheduled. Rest, or get ahead on your weakest subject.")
         for name, h in p["unschedulable_hours"].items():
-            lines.append(f"- ⚠️ **{name}** is {h:g}h short before its exam. Add hours on a weekday or "
+            lines.append(f"- :material/warning: **{name}** is {h:g}h short before its exam. Add hours on a weekday or "
                          f"tick off topics you already know.")
         active = [s for s in p["subjects"] if s["days_left"] > 0]
         if active:

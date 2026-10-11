@@ -98,4 +98,13 @@ entry.
 pip install pytest && python -m pytest -q
 ```
 
-Data lives in `data/planner.db` (SQLite).
+Data lives in `data/planner.db` (SQLite). Set `PLANNER_DB=/some/other.db` to use a different file
+(for example, for experiments).
+
+## UI
+
+Pages: **Today**, **Assistant**, **Plan**, **Subjects**, **Progress** and **Agents**, in a top navigation
+bar. The theme is in `.streamlit/config.toml`: Inter and Plus Jakarta Sans fonts, an indigo accent, and
+light and dark variants that follow your system. Custom styles are in `ui/styles.py`, and the HTML
+components (hero, session cards, week strip, timeline, progress rings, activity feed) are in
+`ui/components.py`. Icons are Google Material Symbols.

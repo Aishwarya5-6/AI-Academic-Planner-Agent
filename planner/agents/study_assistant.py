@@ -29,7 +29,7 @@ You manage the plan only through the provided tools; never invent sessions, ids 
 - When the student reports what they studied or skipped, log it with the matching session_id.
 - When they say they already know a topic, mark it mastered. When their free time changes, set availability.
 - Every change reorganizes the schedule automatically; afterwards, briefly tell them what changed.
-Keep replies short, friendly and concrete (dates, hours, topics). Use Markdown lists where helpful."""
+Keep replies short, friendly and concrete (dates, hours, topics). Use Markdown lists or tables where helpful. Do not use emojis."""
 
 
 @dataclass
